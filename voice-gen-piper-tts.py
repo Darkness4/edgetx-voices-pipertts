@@ -19,6 +19,7 @@ from rich.progress import (
 from rich.text import Text
 import wave
 from piper import PiperVoice
+from piper.download_voices import download_voice
 
 
 def init_argparse() -> argparse.ArgumentParser:
@@ -27,6 +28,13 @@ def init_argparse() -> argparse.ArgumentParser:
     )
     parser.add_argument("file", type=str, help="CSV Translation file")
     parser.add_argument("langdir", type=str, help="Language subfolder")
+    parser.add_argument(
+        "--voice",
+        type=str,
+        help="Piper TTS voice pack (example: en_US-amy-low)",
+        required=False,
+        default="en_US-amy-low",
+    )
     parser.add_argument(
         "--cuda", help="Use CUDA", action=argparse.BooleanOptionalAction
     )
@@ -43,7 +51,8 @@ def main() -> None:
     basedir = Path(__file__).resolve().parent
     outdir = Path()
 
-    voice = PiperVoice.load("en_US-amy-low.onnx", use_cuda=args.cuda)
+    download_voice(args.voice, Path())
+    voice = PiperVoice.load(args.voice + ".onnx", use_cuda=args.cuda)
 
     if not os.path.isfile(csv_file):
         print("Error: voice file not found")

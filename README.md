@@ -1,5 +1,7 @@
 # EdgeTX Voices generated with Piper TTS
 
+Generate voice packs for EdgeTX **locally** using Piper TTS.
+
 ## System Dependencies
 
 - UV
@@ -17,8 +19,8 @@ uv sync --extra cuda
 ## Usage
 
 ```shell
-uv run voice-gen-piper-tts.py ./voices/en-US.csv en [--cuda]
-uv run voice-gen-piper-tts.py ./voices/en-US_scripts.csv en/SCRIPTS [--cuda]
+uv run voice-gen-piper-tts.py ./voices/en-US.csv en [--voice=en_US-amy-low] [--cuda]
+uv run voice-gen-piper-tts.py ./voices/en-US_scripts.csv en/SCRIPTS [--voice=en_US-amy-low] [--cuda]
 ```
 
 NB: I've changed the sounds of "armed" and "acro mode". See `voices/en-US.csv`.
