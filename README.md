@@ -23,7 +23,8 @@ uv run voice-gen-piper-tts.py ./voices/en-US.csv en [--voice=en_US-amy-low] [--c
 uv run voice-gen-piper-tts.py ./voices/en-US_scripts.csv en/SCRIPTS [--voice=en_US-amy-low] [--cuda]
 ```
 
-NB: I've changed the sounds of "armed" and "acro mode". See `voices/en-US.csv`.
+NB: I've changed various sounds. You should import the translations from the
+[official repository](https://github.com/EdgeTX/edgetx-sdcard-sounds/tree/main/voices).
 
 ## License
 
