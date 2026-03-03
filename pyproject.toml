@@ -1,14 +1,10 @@
 [project]
-name = "edgetx-sdcard-sounds"
+name = "edgetx-voices-pipertts"
 version = "0.1.0"
-description = "Add your description here"
+description = "EdgeTX Voices generated with Piper TTS"
 readme = "README.md"
 requires-python = ">=3.13"
-dependencies = [
-    "onnxruntime>=1.24.2",
-    "piper-tts>=1.4.1",
-    "rich>=14.3.3",
-]
+dependencies = ["onnxruntime>=1.24.2", "piper-tts>=1.4.1", "rich>=14.3.3"]
 
 [dependency-groups]
 dev = ["ruff>=0.15.4"]
